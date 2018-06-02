@@ -32,12 +32,6 @@ def isWordGuessed(secretWord, lettersGuessed):
             return False
     return True
 
-
-def getGuessedWord():
-     guessed = ''
-
-     return guessed
-
 # Get all the avaliable letters from the ascii . Returns a string containing all
 #the letters
 def getAvailableLetters():
@@ -67,9 +61,9 @@ def hangman(secretWord):
 
         print 'Available letters', available
         letter = raw_input('Please guess a letter: ')
+        guessed = ''
         if letter in lettersGuessed:
 
-            guessed = getGuessedWord()
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter
@@ -80,7 +74,6 @@ def hangman(secretWord):
         elif letter in secretWord:
             lettersGuessed.append(letter)
 
-            guessed = getGuessedWord()
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter
@@ -92,7 +85,6 @@ def hangman(secretWord):
             guesses -=1
             lettersGuessed.append(letter)
 
-            guessed = getGuessedWord()
             for letter in secretWord:
                 if letter in lettersGuessed:
                     guessed += letter

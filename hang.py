@@ -107,8 +107,5 @@ def hangman(secretWord):
         else:
             print 'Sorry, you ran out of guesses. The word was ', secretWord, '.'
 
-
-
-
 secretWord = loadWords().lower()
 hangman(secretWord)
